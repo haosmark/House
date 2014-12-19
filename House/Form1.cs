@@ -31,7 +31,12 @@ namespace House
 
         private void createObjects()
         {
-
+            RoomWithDoor livingRoom = new RoomWithDoor("Living Room", "an antique carpet", "an oak door with a brass knob");
+            Room diningRoom = new Room("Dining Room", "crystal chandelier");
+            RoomWithDoor kitchen = new RoomWithDoor("Kitchen", "stainless steel appliances", "screen door");
+            OutsideWithDoor frontYard = new OutsideWithDoor("Front Yard", false, "an oak door with a brass knob");
+            OutsideWithDoor backYard = new OutsideWithDoor("Back Yard", true, "screen door");
+            Outside garden = new Outside("Garden", false);
         }
     }
 }

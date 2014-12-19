@@ -8,7 +8,23 @@ namespace House
 {
     class RoomWithDoor : Room, IHasExteriorDoor
     {
-        // the DoorLocation property goes here
-        // the read-only DoorDescription property goes here
+        public RoomWithDoor(string name, string decoration, string doorDescription)
+            : base(name, decoration)
+        {
+            this.doorDescription = doorDescription;
+        }
+
+        private Location doorLocation;
+        public Location DoorLocation
+        {
+            get { return this.doorLocation; }
+            set { this.doorLocation = value; }
+        }
+
+        private string doorDescription;
+        public string DoorDescription
+        {
+            get { throw new NotImplementedException(); }
+        }
     }
 }

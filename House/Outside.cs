@@ -15,5 +15,13 @@ namespace House
         {
             this.hot = hot;
         }
+
+        public override string Description
+        {
+            get
+            {
+                return (hot) ? "It's very hot here." : "It's nice out here";
+            }
+        }
     }
 }
