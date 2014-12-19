@@ -37,6 +37,13 @@ namespace House
             OutsideWithDoor frontYard = new OutsideWithDoor("Front Yard", false, "an oak door with a brass knob");
             OutsideWithDoor backYard = new OutsideWithDoor("Back Yard", true, "screen door");
             Outside garden = new Outside("Garden", false);
+
+            frontYard.Exits = new Location[2] { livingRoom, garden };
+            livingRoom.Exits = new Location[2] { frontYard, diningRoom };
+            diningRoom.Exits = new Location[2] { livingRoom, kitchen };
+            kitchen.Exits = new Location[2] { diningRoom, backYard };
+            backYard.Exits = new Location[2] { kitchen, garden };
+            garden.Exits = new Location[2] { frontYard, backYard };
         }
     }
 }
