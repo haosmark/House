@@ -12,12 +12,19 @@ namespace House
 {
     public partial class Form1 : Form
     {
-        private Location currentLocation;
+        Location currentLocation;
+        RoomWithDoor livingRoom;
+        Room diningRoom;
+        RoomWithDoor kitchen;
+        OutsideWithDoor frontYard;
+        OutsideWithDoor backYard;
+        Outside garden;
 
         public Form1()
         {
             InitializeComponent();
             createObjects();
+            currentLocation = frontYard;
         }
 
         private void moveToANewLocation(Location location)
@@ -31,12 +38,12 @@ namespace House
 
         private void createObjects()
         {
-            RoomWithDoor livingRoom = new RoomWithDoor("Living Room", "an antique carpet", "an oak door with a brass knob");
-            Room diningRoom = new Room("Dining Room", "crystal chandelier");
-            RoomWithDoor kitchen = new RoomWithDoor("Kitchen", "stainless steel appliances", "screen door");
-            OutsideWithDoor frontYard = new OutsideWithDoor("Front Yard", false, "an oak door with a brass knob");
-            OutsideWithDoor backYard = new OutsideWithDoor("Back Yard", true, "screen door");
-            Outside garden = new Outside("Garden", false);
+            livingRoom = new RoomWithDoor("Living Room", "an antique carpet", "an oak door with a brass knob");
+            diningRoom = new Room("Dining Room", "crystal chandelier");
+            kitchen = new RoomWithDoor("Kitchen", "stainless steel appliances", "screen door");
+            frontYard = new OutsideWithDoor("Front Yard", false, "an oak door with a brass knob");
+            backYard = new OutsideWithDoor("Back Yard", true, "screen door");
+            garden = new Outside("Garden", false);
 
             frontYard.Exits = new Location[2] { livingRoom, garden };
             livingRoom.Exits = new Location[2] { frontYard, diningRoom };

@@ -24,7 +24,7 @@ namespace House
         private string doorDescription;
         public string DoorDescription
         {
-            get { throw new NotImplementedException(); }
+            get { return this.doorDescription; }
         }
     }
 }
